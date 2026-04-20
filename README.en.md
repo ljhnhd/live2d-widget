@@ -24,6 +24,7 @@ You can also check out example web pages:
 - Check the effect in the lower left corner of [Mimi's Blog](https://zhangshuqiao.org)
 - [demo/demo.html](https://live2d-widget.pages.dev/demo/demo) to demonstrate basic functionality
 - [demo/login.html](https://live2d-widget.pages.dev/demo/login) to imitate the login interface of NPM
+- [demo/blog.html](https://live2d-widget.pages.dev/demo/blog) as an anime-style personal blog template
 
 ## Usage
 

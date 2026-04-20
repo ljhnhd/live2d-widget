@@ -24,6 +24,7 @@
 - 在 [米米的博客](https://zhangshuqiao.org) 的左下角可查看效果
 - [demo/demo.html](https://live2d-widget.pages.dev/demo/demo)，展现基础功能
 - [demo/login.html](https://live2d-widget.pages.dev/demo/login)，仿 NPM 的登陆界面
+- [demo/blog.html](https://live2d-widget.pages.dev/demo/blog)，二次元动漫风格个人博客模版
 
 ## 使用
 
