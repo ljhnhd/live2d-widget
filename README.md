@@ -24,6 +24,17 @@
 - 在 [米米的博客](https://zhangshuqiao.org) 的左下角可查看效果
 - [demo/demo.html](https://live2d-widget.pages.dev/demo/demo)，展现基础功能
 - [demo/login.html](https://live2d-widget.pages.dev/demo/login)，仿 NPM 的登陆界面
+- [index.html](./index.html)，二次元动漫风格个人博客模板（可直接用于 GitHub Pages）
+
+## 二次元博客模板与 GitHub Pages 部署
+
+仓库根目录新增了一个可直接使用的个人博客首页 `index.html`，配套样式位于 `assets/blog.css`，并默认加载 `dist/autoload.js` 来显示看板娘。
+
+要部署到 GitHub Pages：
+
+1. 在仓库设置中启用 **Pages**，Source 选择 **GitHub Actions**；
+2. 保持 `.github/workflows/static.yml` 启用状态；
+3. 将改动 push 到 `master` 或 `main` 分支，Actions 会自动部署。
 
 ## 使用
 

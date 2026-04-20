@@ -1,0 +1,124 @@
+:root {
+  --bg: #0f1020;
+  --panel: rgba(30, 34, 64, 0.75);
+  --text: #f6f7ff;
+  --subtle: #d0d6ff;
+  --accent: #ff8fc7;
+  --accent-2: #8dd9ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 143, 199, 0.28), transparent 36%),
+    radial-gradient(circle at 90% 15%, rgba(141, 217, 255, 0.22), transparent 38%),
+    linear-gradient(160deg, #0f1020 0%, #181b37 55%, #22254a 100%);
+  min-height: 100vh;
+  line-height: 1.7;
+  padding: 24px;
+}
+
+.hero,
+main,
+footer {
+  max-width: 980px;
+  margin: 0 auto 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--subtle);
+  text-decoration: none;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.intro h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.tag {
+  margin: 0;
+  color: var(--accent-2);
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #0f1020;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+h2 {
+  margin: 8px 0 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.post h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.gallery-item {
+  text-align: center;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 16px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -92,7 +92,7 @@ class ToolsManager {
         };
     }
     registerTools() {
-        var _a;
+        var _b;
         if (!Array.isArray(this.config.tools)) {
             this.config.tools = Object.keys(this.tools);
         }
@@ -102,8 +102,8 @@ class ToolsManager {
                 const element = document.createElement('span');
                 element.id = `waifu-tool-${toolName}`;
                 element.innerHTML = icon;
-                (_a = document
-                    .getElementById('waifu-tool')) === null || _a === void 0 ? void 0 : _a.insertAdjacentElement('beforeend', element);
+                (_b = document
+                    .getElementById('waifu-tool')) === null || _b === void 0 ? void 0 : _b.insertAdjacentElement('beforeend', element);
                 element.addEventListener('click', callback);
             }
         }
