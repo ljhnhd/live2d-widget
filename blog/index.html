@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星野日记 | 首页</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+	<a class="nav-brand" href="index.html">✦ 星野日记</a>
+	<ul class="nav-links">
+		<li><a href="index.html" class="active">首页</a></li>
+		<li><a href="archive.html">归档</a></li>
+		<li><a href="about.html">关于</a></li>
+	</ul>
+</nav>
+
+<header class="hero">
+	<div class="avatar">星</div>
+	<h1>星野日记</h1>
+	<p class="subtitle">欢迎来到我的二次元小站！这里记录我的学习、绘画、游戏和日常灵感。点击右下角看板娘和我一起探索吧 ✨</p>
+</header>
+
+<main class="container">
+	<div class="layout-two-col">
+
+		<section class="card">
+			<div class="post-item">
+				<h2><a href="posts/live2d-setup.html">第一次尝试 Live2D 博客装扮</a></h2>
+				<div class="post-meta">
+					<span>2026-04-20</span>
+					<span class="tag">前端</span>
+					<span class="tag">Live2D</span>
+				</div>
+				<p class="post-excerpt">把看板娘接入博客后，页面一下子就有了"会呼吸"的感觉。从零开始配置 Live2D Widget 的完整过程记录。</p>
+				<a href="posts/live2d-setup.html" class="read-more">阅读全文</a>
+			</div>
+
+			<div class="post-item">
+				<h2><a href="posts/anime-list.html">我的春日追番清单</a></h2>
+				<div class="post-meta">
+					<span>2026-04-12</span>
+					<span class="tag">动漫</span>
+					<span class="tag">日常</span>
+				</div>
+				<p class="post-excerpt">这季最喜欢的是轻松治愈向作品，色彩和配乐都很棒。整理了本季的追番清单和初步印象。</p>
+				<a href="posts/anime-list.html" class="read-more">阅读全文</a>
+			</div>
+
+			<div class="post-item">
+				<h2><a href="posts/drawing-practice.html">手绘练习：樱花与少女侧颜</a></h2>
+				<div class="post-meta">
+					<span>2026-04-06</span>
+					<span class="tag">绘画</span>
+					<span class="tag">创作</span>
+				</div>
+				<p class="post-excerpt">最近在练头发分组和光影层次，发现先做大色块再细化效率更高。下次准备挑战夜景霓虹主题。</p>
+				<a href="posts/drawing-practice.html" class="read-more">阅读全文</a>
+			</div>
+		</section>
+
+		<aside>
+			<div class="card widget">
+				<h3 class="widget-title">关于我</h3>
+				<p>你好，我是星野，一名热爱前端和二次元文化的创作者。<a href="about.html">了解更多 →</a></p>
+			</div>
+
+			<div class="card widget">
+				<h3 class="widget-title">近期目标</h3>
+				<ul>
+					<li>✅ 完成博客 1.0 多页面版</li>
+					<li>📝 发布 5 篇技术/动漫文章</li>
+					<li>🎨 绘制一套原创头像</li>
+				</ul>
+			</div>
+
+			<div class="card widget">
+				<h3 class="widget-title">标签云</h3>
+				<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+					<span class="tag">前端</span>
+					<span class="tag">Live2D</span>
+					<span class="tag">动漫</span>
+					<span class="tag">绘画</span>
+					<span class="tag">日常</span>
+					<span class="tag">创作</span>
+				</div>
+			</div>
+		</aside>
+
+	</div>
+</main>
+
+<footer>© 2026 星野日记 · Powered by <a href="https://github.com/stevenjoezhang/live2d-widget">Live2D Widget</a></footer>
+
+<script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"></script>
+</body>
+</html>

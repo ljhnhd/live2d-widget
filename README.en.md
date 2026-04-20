@@ -25,6 +25,7 @@ You can also check out example web pages:
 - [demo/demo.html](https://live2d-widget.pages.dev/demo/demo) to demonstrate basic functionality
 - [demo/login.html](https://live2d-widget.pages.dev/demo/login) to imitate the login interface of NPM
 - [demo/blog.html](https://live2d-widget.pages.dev/demo/blog) as an anime-style personal blog template
+- [blog/](https://ljhnhd.github.io/live2d-widget/) multi-page anime blog deployed to GitHub Pages (home, archive, about, full post pages)
 
 ## Usage
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第一次尝试 Live2D 博客装扮 | 星野日记</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+	<a class="nav-brand" href="../index.html">✦ 星野日记</a>
+	<ul class="nav-links">
+		<li><a href="../index.html">首页</a></li>
+		<li><a href="../archive.html">归档</a></li>
+		<li><a href="../about.html">关于</a></li>
+	</ul>
+</nav>
+
+<header class="page-header">
+	<h1>第一次尝试 Live2D 博客装扮</h1>
+	<p>2026-04-20 · <span class="tag">前端</span> <span class="tag">Live2D</span></p>
+</header>
+
+<main class="container" style="max-width:760px;">
+	<article class="card post-full">
+
+		<div class="post-body">
+			<p>在无数次逛别人的博客、看到角落里会眨眼睛的二次元角色之后，我终于下定决心——要给自己的博客也加上一只看板娘。于是就有了今天这篇折腾记录。</p>
+
+			<h2>什么是 Live2D Widget？</h2>
+			<p><a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">Live2D Widget</a> 是一个开源项目，可以让你在任意网页的角落放置一个可交互的 Live2D 模型。它支持 Cubism 2 和 Cubism 5 两代 SDK，并且不依赖 jQuery 等重量级框架，非常轻量。</p>
+
+			<h2>接入方法</h2>
+			<p>最简单的方式只需一行脚本：</p>
+			<blockquote>
+				&lt;script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"&gt;&lt;/script&gt;
+			</blockquote>
+			<p>把它加入页面的 <code>&lt;body&gt;</code> 末尾，刷新页面，看板娘就会出现在左下角。她还会响应你的鼠标悬浮、页面滚动等事件，说出随机台词，相当有趣。</p>
+
+			<h2>进阶配置</h2>
+			<p>项目提供了 <code>initWidget</code> 函数，支持多种配置项：</p>
+			<ul>
+				<li><strong>waifuPath</strong>：自定义台词 JSON 的路径</li>
+				<li><strong>cdnPath</strong>：模型资源的 CDN 地址</li>
+				<li><strong>modelId</strong>：默认加载的模型编号</li>
+				<li><strong>tools</strong>：右侧显示的工具按钮列表</li>
+				<li><strong>drag</strong>：是否允许拖拽看板娘</li>
+			</ul>
+			<p>通过修改 <code>waifu-tips.json</code>，还可以让看板娘根据页面上的特定 CSS 选择器触发专属台词，非常适合博客的个性化场景。</p>
+
+			<h2>部署心得</h2>
+			<p>我最终选择直接加载 jsDelivr CDN 上的版本，零配置、零维护。如果想深度定制，可以 Fork 项目后自己修改，再通过 Cloudflare Pages 或 GitHub Pages 自行托管——这也是这个博客多页面版本正在使用的方案。</p>
+
+			<blockquote>
+				看板娘让冰冷的网页有了温度。如果你也在搭博客，不妨试试！
+			</blockquote>
+		</div>
+
+		<nav class="post-nav">
+			<span></span>
+			<a href="anime-list.html">下一篇：我的春日追番清单 →</a>
+		</nav>
+	</article>
+</main>
+
+<footer>© 2026 星野日记 · Powered by <a href="https://github.com/stevenjoezhang/live2d-widget">Live2D Widget</a></footer>
+
+<script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"></script>
+</body>
+</html>

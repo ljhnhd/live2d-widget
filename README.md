@@ -25,6 +25,7 @@
 - [demo/demo.html](https://live2d-widget.pages.dev/demo/demo)，展现基础功能
 - [demo/login.html](https://live2d-widget.pages.dev/demo/login)，仿 NPM 的登陆界面
 - [demo/blog.html](https://live2d-widget.pages.dev/demo/blog)，二次元动漫风格个人博客模版
+- [blog/](https://ljhnhd.github.io/live2d-widget/)，多页面二次元博客，部署于 GitHub Pages（含首页、归档、关于、文章详情页）
 
 ## 使用
 
