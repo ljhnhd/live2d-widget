@@ -1,67 +1,257 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星野日记 | 二次元个人博客</title>
-<link rel="stylesheet" href="./assets/blog.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星野日记 | 二次元个人博客</title>
+  <!-- Google Fonts: Ma Shan Zheng (display) + Noto Sans SC (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (bundled locally from npm) -->
+  <link rel="stylesheet" href="./assets/vendor/fa/css/all.min.css">
+  <!-- AOS — Animate On Scroll (bundled locally from npm) -->
+  <link rel="stylesheet" href="./assets/vendor/aos.css">
+  <!-- Blog stylesheet -->
+  <link rel="stylesheet" href="./assets/blog.css">
 </head>
 <body>
-<header class="hero">
-  <nav class="nav">
-    <div class="logo">星野日记</div>
-    <ul>
-      <li><a href="#about">关于我</a></li>
-      <li><a href="#posts">最新文章</a></li>
-      <li><a href="#gallery">日常画廊</a></li>
+
+<!-- Twinkling star background canvas -->
+<canvas id="star-canvas" aria-hidden="true"></canvas>
+
+<!-- Sakura petals container (populated by blog.js) -->
+<div class="sakura-wrap" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <span class="logo-star">✦</span> 星野日记
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"><i class="fa-solid fa-user-astronaut"></i> 关于我</a></li>
+      <li><a href="#posts"><i class="fa-solid fa-book-open"></i> 文章</a></li>
+      <li><a href="#anime"><i class="fa-solid fa-film"></i> 追番</a></li>
+      <li><a href="#gallery"><i class="fa-solid fa-images"></i> 画廊</a></li>
     </ul>
-  </nav>
-  <section class="intro card">
-    <p class="tag">ANIME · LIFE · CODE</p>
-    <h1>欢迎来到我的二次元小宇宙 ✨</h1>
-    <p>记录追番、画画、写代码和生活碎片。愿你也能在这里找到一点心动与治愈。</p>
-    <a class="btn" href="#posts">开始阅读</a>
-  </section>
-</header>
+    <button class="nav-burger" id="navBurger" aria-label="打开菜单">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-badge">✨ ANIME &nbsp;·&nbsp; LIFE &nbsp;·&nbsp; CODE ✨</p>
+    <h1 class="hero-title">
+      欢迎来到<br>
+      <span class="gradient-text">星野的二次元宇宙</span>
+    </h1>
+    <p class="hero-desc">
+      记录追番笔记、代码灵感与生活碎片。<br>
+      愿你也能在此找到一丝治愈与心动。
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#posts">
+        <i class="fa-solid fa-feather-pointed"></i> 开始阅读
+      </a>
+      <a class="btn btn-ghost" href="#about">
+        <i class="fa-solid fa-star"></i> 了解我
+      </a>
+    </div>
+    <div class="status-ticker">
+      <span class="status-dot"></span>
+      <span class="ticker-text">
+        📺 正在追: <strong>《葬送的芙莉莲》</strong>
+        &nbsp;｜&nbsp;
+        🎵 正在听: <strong>Eve — 廻廻奇譚</strong>
+      </span>
+    </div>
+  </div>
+</section>
 
 <main>
-  <section id="about" class="card">
-    <h2>关于我</h2>
-    <p>你好，我是星野。白天是前端开发，夜晚是动漫爱好者和业余插画师。这个博客用于分享技术笔记、番剧感想和灵感碎片。</p>
-  </section>
 
-  <section id="posts">
-    <h2>最新文章</h2>
-    <div class="grid">
-      <article class="card post">
-        <h3>春日番剧清单：值得二刷的 5 部作品</h3>
-        <p>从镜头语言到配乐，聊聊这些作品为什么会让人反复心动。</p>
-      </article>
-      <article class="card post">
-        <h3>给博客加上 Live2D 看板娘</h3>
-        <p>基于本仓库模板整理的接入心得，让页面更有“二次元温度”。</p>
-      </article>
-      <article class="card post">
-        <h3>从配色到排版：打造轻量动漫风网页</h3>
-        <p>分享一套可复用的样式思路，用最少代码做出柔和梦幻感。</p>
-      </article>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid" data-aos="fade-up">
+        <div class="avatar-wrap">
+          <img
+            class="avatar"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Hoshino&backgroundColor=b6e3f4,ffd5dc&backgroundType=gradientLinear"
+            alt="星野的头像"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.querySelector('.avatar-fallback').style.display='flex';"
+          >
+          <div class="avatar-fallback" aria-hidden="true">星</div>
+          <div class="avatar-ring"></div>
+        </div>
+        <div class="about-body">
+          <h2 class="section-title">关于我 <span class="title-sub">About</span></h2>
+          <p>
+            你好！我是 <strong>星野</strong>，白天写代码，夜晚追番与画画。
+            这个博客记录技术探索、观影感悟和日常灵感。
+          </p>
+          <p>喜欢收集精致的事物，相信「每行代码都可以像艺术品一样被对待」。</p>
+          <div class="chip-list">
+            <span class="chip">前端开发</span>
+            <span class="chip">动漫爱好者</span>
+            <span class="chip">业余插画</span>
+            <span class="chip">游戏</span>
+            <span class="chip">猫星人</span>
+          </div>
+          <div class="social-row">
+            <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-btn" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+            <a href="#" class="social-btn" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn" title="邮箱"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="gallery">
-    <h2>日常画廊</h2>
-    <div class="grid">
-      <div class="card gallery-item">🎨 手绘练习</div>
-      <div class="card gallery-item">🎧 番剧 OST</div>
-      <div class="card gallery-item">🌸 城市散步</div>
+  <!-- Blog Posts -->
+  <section id="posts" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">最新文章 <span class="title-sub">Blog</span></h2>
+        <p>分享技术、追番与生活的点点滴滴</p>
+      </div>
+      <div class="posts-grid">
+
+        <article class="post-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="post-meta">
+            <span class="cat cat-anime">番剧</span>
+            <span><i class="fa-regular fa-calendar"></i> 2026-04-18</span>
+            <span><i class="fa-regular fa-clock"></i> 8 min</span>
+          </div>
+          <h3>春日番剧清单：值得二刷的 5 部作品</h3>
+          <p>从镜头语言到配乐，聊聊这些作品为什么会让人反复心动，以及它们对我的影响。</p>
+          <a class="post-link" href="#">阅读全文 <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+
+        <article class="post-card featured" data-aos="fade-up" data-aos-delay="80">
+          <div class="post-meta">
+            <span class="cat cat-tech">技术</span>
+            <span><i class="fa-regular fa-calendar"></i> 2026-04-10</span>
+            <span><i class="fa-regular fa-clock"></i> 12 min</span>
+          </div>
+          <h3>给博客加上 Live2D 看板娘</h3>
+          <p>基于本仓库模板整理的完整接入心得，让你的页面也拥有独特的「二次元温度」。</p>
+          <a class="post-link" href="#">阅读全文 <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+
+        <article class="post-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="post-meta">
+            <span class="cat cat-design">设计</span>
+            <span><i class="fa-regular fa-calendar"></i> 2026-03-29</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min</span>
+          </div>
+          <h3>从配色到排版：打造轻量动漫风网页</h3>
+          <p>分享一套可复用的样式思路，用最少代码做出柔和梦幻感，无需设计师也能上手。</p>
+          <a class="post-link" href="#">阅读全文 <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+
+      </div>
     </div>
   </section>
+
+  <!-- Anime Tracker -->
+  <section id="anime" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">追番记录 <span class="title-sub">Anime</span></h2>
+        <p>今季追番进度与评分</p>
+      </div>
+      <div class="anime-grid">
+
+        <div class="anime-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="anime-cover" style="--cg:linear-gradient(135deg,#667eea,#764ba2)">
+            <span>芙莉莲</span>
+          </div>
+          <div class="anime-info">
+            <h4>葬送的芙莉莲</h4>
+            <p>28 / 28 集 · ★★★★★</p>
+            <div class="pbar"><div class="pfill" style="width:100%;--c1:#667eea;--c2:#764ba2"></div></div>
+          </div>
+        </div>
+
+        <div class="anime-card" data-aos="zoom-in" data-aos-delay="80">
+          <div class="anime-cover" style="--cg:linear-gradient(135deg,#f093fb,#f5576c)">
+            <span>药屋</span>
+          </div>
+          <div class="anime-info">
+            <h4>药屋少女的呢喃 第二季</h4>
+            <p>5 / 24 集 · ★★★★</p>
+            <div class="pbar"><div class="pfill" style="width:21%;--c1:#f093fb;--c2:#f5576c"></div></div>
+          </div>
+        </div>
+
+        <div class="anime-card" data-aos="zoom-in" data-aos-delay="160">
+          <div class="anime-cover" style="--cg:linear-gradient(135deg,#4facfe,#00f2fe)">
+            <span>蓝监狱</span>
+          </div>
+          <div class="anime-info">
+            <h4>蓝色监狱</h4>
+            <p>17 / 24 集 · ★★★★</p>
+            <div class="pbar"><div class="pfill" style="width:70%;--c1:#4facfe;--c2:#00f2fe"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">日常画廊 <span class="title-sub">Gallery</span></h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="0"   style="--cg:linear-gradient(135deg,#ff9a9e,#fad0c4)"><i class="gallery-icon fa-solid fa-palette"></i><p>手绘练习</p></div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="50"  style="--cg:linear-gradient(135deg,#a18cd1,#fbc2eb)"><i class="gallery-icon fa-solid fa-headphones"></i><p>番剧 OST</p></div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="100" style="--cg:linear-gradient(135deg,#84fab0,#8fd3f4)"><i class="gallery-icon fa-solid fa-camera"></i><p>城市摄影</p></div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="150" style="--cg:linear-gradient(135deg,#ffecd2,#fcb69f)"><i class="gallery-icon fa-solid fa-mug-hot"></i><p>咖啡与读书</p></div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="200" style="--cg:linear-gradient(135deg,#a1c4fd,#c2e9fb)"><i class="gallery-icon fa-solid fa-code"></i><p>代码美学</p></div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="250" style="--cg:linear-gradient(135deg,#fddb92,#d1fdff)"><i class="gallery-icon fa-solid fa-cat"></i><p>猫猫日常</p></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="card">
-  <p>© 2026 星野日记 · Powered by Live2D Widget</p>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-motto">「每一天都是限定的动漫封面」</p>
+    <div class="footer-socials">
+      <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" class="social-btn" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+      <a href="#" class="social-btn" title="RSS"><i class="fa-solid fa-rss"></i></a>
+    </div>
+    <p class="footer-copy">
+      © 2026 星野日记 · Powered by
+      <a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">Live2D Widget</a>
+    </p>
+  </div>
 </footer>
 
+<!-- Back-to-top -->
+<button class="back-top" id="backTop" aria-label="回到顶部">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- AOS (local vendor) -->
+<script src="./assets/vendor/aos.js"></script>
+<!-- Live2D widget -->
 <script src="./dist/autoload.js"></script>
+<!-- Blog interactions -->
+<script src="./assets/blog.js"></script>
+
 </body>
 </html>
