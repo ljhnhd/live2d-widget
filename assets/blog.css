@@ -731,3 +731,45 @@ body {
   .posts-grid { grid-template-columns: 1fr; }
   .anime-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Live2D 看板娘主题适配 ─────────────────────────
+   Override the default waifu.css to match the dark
+   glassmorphism blog theme.
+   ─────────────────────────────────────────────── */
+
+/* Toggle button — use blog pink gradient instead of amber */
+#waifu-toggle {
+  background: linear-gradient(135deg, #ff7eb3, #c87bff) !important;
+  border-radius: 0 12px 12px 0 !important;
+  box-shadow: 2px 0 16px rgba(255, 126, 179, 0.4) !important;
+}
+
+/* Raise widget above blog content layers (z-index: 2) */
+#waifu {
+  z-index: 50 !important;
+}
+
+/* Tips bubble — dark glassmorphism style */
+#waifu-tips {
+  background: rgba(18, 20, 42, 0.88) !important;
+  border: 1px solid rgba(200, 123, 255, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 126, 179, 0.08) !important;
+  color: #eef0ff !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  font-family: 'Noto Sans SC', 'PingFang SC', sans-serif !important;
+}
+
+/* Coloured spans inside tips */
+#waifu-tips span {
+  color: #ff7eb3 !important;
+}
+
+/* Tool icons — use blog subtle colour with pink hover */
+#waifu-tool svg {
+  fill: #9ba8d8 !important;
+}
+
+#waifu-tool svg:hover {
+  fill: #ff7eb3 !important;
+}
